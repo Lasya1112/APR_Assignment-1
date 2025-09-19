@@ -1,102 +1,57 @@
-Assignment-1: Wine Quality Prediction (SVM)
+# 🍷 Wine Quality Prediction using SVM  
+---
 
-This project applies a Support Vector Machine (SVM) classifier on the UCI Wine Quality dataset to predict whether a wine is "good" or "not good" (binary classification).
+##  Project Overview
+This project applies a **Support Vector Machine (SVM)** classifier on the **UCI Wine Quality Dataset** to classify wines into:  
+- **Good Quality (1):** quality ≥ 7  
+- **Not Good (0):** quality < 7  
 
-📊 Dataset
+The dataset contains **4898 white wine samples** with **11 physicochemical features** (e.g., acidity, residual sugar, alcohol).  
+The goal is to predict whether a wine is "good" or "not good" based on these features.  
 
-Source: UCI Wine Quality Dataset
+---
 
-Data Used: White Wine dataset (winequality-white.csv) with 4898 samples and 11 chemical features
-
-Target:
-
-Converted into a binary label:
-
-Good (1): quality ≥ 7
-
-Not Good (0): quality < 7
-
-⚙️ Installation & Requirements
-
-Install dependencies using pip:
-
+##  Install Dependencies
 pip install -r requirements.txt
 
-
-requirements.txt should contain:
-
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-
-▶️ Usage
-
-Run the script from terminal:
-
+## Run the Script
 python assignment1.py
 
+# 📊 Results & Evaluation
+## Performance Metrics
+Metric	      Value
+Accuracy   	  ~0.83
+Precision	  ~0.77
+Recall	      ~0.35
+F1-score	  ~0.48
 
-This will:
+* High accuracy and precision
+* Lower recall due to dataset imbalance (fewer "good" wines)
 
-Download and preprocess the dataset
+## Visualizations
+1. Wine Quality Distribution
 
-Train an SVM classifier (RBF kernel)
+Shows imbalance between good and not good wines.
 
-Print evaluation metrics to the terminal
 
-Save all plots and metrics into the outputs/ folder
+2. Feature Correlation Heatmap
 
-📂 Outputs
+Correlation between physicochemical properties and quality (alcohol is most correlated).
 
-After running, check the outputs/ directory. It will contain:
 
-Metrics
+3. ROC Curve
 
-svm_metrics_summary.csv → Contains accuracy, precision, recall, and F1-score
+Evaluates classifier performance across thresholds.
 
-Plots
 
-wine_quality_distribution.png → Distribution of wine quality scores
+4. Precision–Recall Curve
 
-correlation_heatmap.png → Correlation heatmap of features with wine quality
+Shows tradeoff between precision and recall.
 
-svm_roc_curve.png → ROC curve for SVM classifier
+## Conclusion
 
-svm_precision_recall_curve.png → Precision–Recall curve for SVM
+* The SVM model achieves ~83% accuracy in classifying wines.
 
-📈 Results (Sample)
+* Strengths: Reliable when predicting "good" wines (high precision).
 
-Example performance metrics on test data:
-
-Metric	Value
-Accuracy	~0.82
-Precision	~0.70
-Recall	~0.55
-F1-score	~0.62
-
-(Exact values may differ slightly due to randomness in train/test split.)
-
-📑 Project Structure
-Assignment-1/
-│
-├── assignment1.py              # Main script (SVM model training & evaluation)
-├── requirements.txt            # Required dependencies
-├── outputs/                    # Folder for all generated results
-│   ├── wine_quality_distribution.png
-│   ├── correlation_heatmap.png
-│   ├── svm_roc_curve.png
-│   ├── svm_precision_recall_curve.png
-│   └── svm_metrics_summary.csv
-└── README.md                   # This file
-
-🚀 Conclusion
-
-The SVM classifier achieves ~82% accuracy in distinguishing good vs not good wines.
-
-Alcohol shows the strongest correlation with wine quality.
-
-Model precision is higher than recall, meaning it is conservative when predicting “good” wines.
-
-Future improvements could include handling class imbalance with SMOTE or trying ensemble models.
+* Weaknesses: Misses some good wines (low recall due to imbalance).
