@@ -19,11 +19,13 @@ python assignment1.py
 
 # 📊 Results & Evaluation
 ## Performance Metrics
-Metric	      Value
-Accuracy   	  ~0.83
-Precision	  ~0.77
-Recall	      ~0.35
-F1-score	  ~0.48
+| Metric     | Value |
+|------------|-------|
+| Accuracy   | ~0.83 |
+| Precision  | ~0.77 |
+| Recall     | ~0.35 |
+| F1-score   | ~0.48 |
+
 
 * High accuracy and precision
 * Lower recall due to dataset imbalance (fewer "good" wines)
